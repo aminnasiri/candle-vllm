@@ -48,6 +48,10 @@ See [this folder](examples/) for some examples.
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 sudo apt install libssl-dev
 sudo apt install pkg-config
+
+sudo yum install pkg-config
+sudo yum install libssl-dev
+
 git clone git@github.com:EricLBuehler/candle-vllm.git
 cd candle-vllm
 cargo run --release -- --port 2000 --weight-path /home/llama2_7b/ llama
@@ -229,6 +233,8 @@ or
 ```
 cargo run --release -- --port 2000 --model-id <MODEL_ID> <MODEL_TYPE>
 ```
+
+cargo run --release -- --port 2000 --model-id meta-llama/Meta-Llama-3.1-8B-Instruct llama3
 
 For kvcache configuration, set `kvcache_mem_cpu` and `kvcache_mem_gpu`, default 4GB CPU memory and 4GB GPU memory for kvcache. 
 
