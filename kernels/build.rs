@@ -23,8 +23,7 @@ fn main() -> Result<()> {
     println!("cargo:info={builder:?}");
     builder.build_lib("libpagedattention.a");
 
-    let builder2 = bindgen_cuda::Builder::default();
-    let bindings = builder2.build_ptx().unwrap();
+    let bindings = builder.build_ptx().unwrap();
     bindings.write("src/lib.rs").unwrap();
 
     let kernel_dir = PathBuf::from("../kernels/");
